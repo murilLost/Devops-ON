@@ -57,12 +57,12 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}  # Needed to get PR information, if any
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=murilLost_Devops-ON
+      run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=1scjr_devops-on
     - name: Check Quality Gate
       env: 
        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       run: |
-         QUALITY_GATE_STATUS=$(curl -s "https://sonarcloud.io/api/qualitygates/project_status?projectKey=murilLost_Devops-ON" -H "Authorization: Basic $SONAR_TOKEN" | jq -r '.projectStatus.status')
+         QUALITY_GATE_STATUS=$(curl -s "https://sonarcloud.io/api/qualitygates/project_status?projectKey=1scjr_devops-on" -H "Authorization: Basic $SONAR_TOKEN" | jq -r '.projectStatus.status')
          if [ "$QUALITY_GATE_STATUS" = "OK" ]; then
            echo "QG OK"
          fi
