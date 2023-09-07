@@ -14,7 +14,7 @@ import lombok.Data;
 public class AppUser implements UserDetails {
 
   /**
-   * teste
+   *
    */
   private static final long serialVersionUID = 1L;
 
