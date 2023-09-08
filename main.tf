@@ -16,10 +16,10 @@ terraform {
   required_version = ">= 1.1.0"
 
   cloud {
-    organization = "org-P9onoADdUHfqUNyx"
+    organization = "DevopsFiapMurillo"
 
     workspaces {
-      name = "ws-NNn8GnChmrw6mYYt"
+      name = "Devops-ON"
     }
   }
 }
