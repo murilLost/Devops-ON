@@ -10,12 +10,6 @@ terraform {
     }
   }
 
-  backend "s3" {
-      bucket = "devops-on"
-      key    = "Devops-ON"
-      region = "us-east-1"
-  }
-
   required_version = ">= 1.1.0"
 
   cloud {
