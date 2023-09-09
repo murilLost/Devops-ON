@@ -3,8 +3,8 @@ module "app" {
     application_name = "Devops-ON"
     application_version = "f33d95b"
     artifact_bucket = "devops-on"
-    worker_ami = "ami-0abfe55c2cc86d5ad"
-    instance_profile = "allow_s3_ec2_github_demo"
+    worker_ami = "ami-053b0d53c279acc90"
+    instance_profile = "EC2-Controller"
     backend_port = 8080
     subnets = [
     {
