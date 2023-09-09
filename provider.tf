@@ -1,16 +1,17 @@
-# Copyright (c) HashiCorp, Inc.
-# SPDX-License-Identifier: MPL-2.0
-# Fiap MBA SCJ
-
 terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "4.52.0"
+      version = "~> 4.2.0"
     }
     random = {
       source  = "hashicorp/random"
       version = "3.4.3"
+    }
+    backend "s3" {
+      bucket = "devops-on"
+      key    = "Devops-ON"
+      region = "us-east-1"
     }
   }
   required_version = ">= 1.1.0"
@@ -27,6 +28,10 @@ terraform {
 provider "aws" {
   region = "us-east-1"
 }
+
+
+
+
 
 resource "random_pet" "sg" {}
 
