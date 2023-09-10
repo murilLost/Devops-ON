@@ -58,15 +58,20 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}  # Needed to get PR information, if any
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=1scjr_devops-on
-    - name: Check Quality Gate
-      env: 
+    
+    - name: SonarQube Quality Gate check
+      id: sonarqube-quality-gate-check
+      uses: sonarsource/sonarqube-quality-gate-action@master
+      # Force to fail step after specific time.
+      timeout-minutes: 5
+      env:
        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: |
-         QUALITY_GATE_STATUS=$(curl -s "https://sonarcloud.io/api/qualitygates/project_status?projectKey=1scjr_devops-on" -H "Authorization: Basic $SONAR_TOKEN" | jq -r '.projectStatus.status')
-         if [ "$QUALITY_GATE_STATUS" = "OK" ]; then
-            echo "QG OK"
-            cancel-in-progress: true
-         fi
+
+    # Optionally you can use the output from the Quality Gate in another step.
+    # The possible outputs of the `quality-gate-status` variable are `PASSED`, `WARN` or `FAILED`.
+    - name: "Example show SonarQube Quality Gate Status value"
+      run: echo "The Quality Gate status is ${{ steps.sonarqube-quality-gate-check.outputs.quality-gate-status }}"
+  
   build:
     runs-on: ubuntu-latest
     needs: code-analisys
