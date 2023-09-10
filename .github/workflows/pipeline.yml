@@ -61,7 +61,7 @@ jobs:
     
     - name: Sonarcloud Quality Gate check
       id: sonarcloud-quality-gate-check
-      uses: sonarsource/sonarcloud-quality-gate-action@master
+      uses: SonarSource/sonarcloud-github-action@master
       # Force to fail step after specific time.
       timeout-minutes: 5
       env:
