@@ -1,7 +1,7 @@
 module "app" {
     source = "./webapp_deployment"
     application_name = "Devops-ON"
-    application_version = "f33d95b"
+    application_version = "d607fd0"
     artifact_bucket = "devops-on"
     worker_ami = "ami-053b0d53c279acc90"
     instance_profile = "CodeDeployDemo-EC2-Instance-Profile"
