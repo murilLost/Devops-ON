@@ -64,7 +64,8 @@ jobs:
       run: |
          QUALITY_GATE_STATUS=$(curl -s "https://sonarcloud.io/api/qualitygates/project_status?projectKey=1scjr_devops-on" -H "Authorization: Basic $SONAR_TOKEN" | jq -r '.projectStatus.status')
          if [ "$QUALITY_GATE_STATUS" = "OK" ]; then
-           cancel-in-progress: true
+            echo "QG OK"
+            cancel-in-progress: true
          fi
   build:
     runs-on: ubuntu-latest
