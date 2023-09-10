@@ -4,7 +4,7 @@ module "app" {
     application_version = "f33d95b"
     artifact_bucket = "devops-on"
     worker_ami = "ami-053b0d53c279acc90"
-    instance_profile = "acesso-total"
+    instance_profile = "CodeDeployDemo-EC2-Instance-Profile"
     backend_port = 8080
     subnets = [
     {
