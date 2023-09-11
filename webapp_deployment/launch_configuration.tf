@@ -5,9 +5,9 @@ resource "aws_launch_configuration" "as_conf" {
   iam_instance_profile = var.instance_profile
   user_data = <<EOF
 #! /bin/bash
-apt-get update && apt-get install foo bar ...
-yes
+sudo apt-get update && apt-get install foo bar ...
 sudo apt install openjdk-11-jre-headless --fix-missing
+y
 sudo apt install unzip
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
