@@ -73,10 +73,10 @@ Além de subir uma máquina EC2, com uma página HTML simples.
 Página: http://ec2-23-20-172-157.compute-1.amazonaws.com:8080/
 
 APIs:
-http://devops-on-lb-905107195.us-east-1.elb.amazonaws.com/
-http://devops-on-lb-905107195.us-east-1.elb.amazonaws.com/devops
-http://devops-on-lb-905107195.us-east-1.elb.amazonaws.com/public
-http://devops-on-lb-905107195.us-east-1.elb.amazonaws.com/what-is-the-time
+http://devops-on-lb-905107195.us-east-1.elb.amazonaws.com/  
+http://devops-on-lb-905107195.us-east-1.elb.amazonaws.com/devops  
+http://devops-on-lb-905107195.us-east-1.elb.amazonaws.com/public  
+http://devops-on-lb-905107195.us-east-1.elb.amazonaws.com/what-is-the-time  
 
 ![image](https://github.com/murilLost/Devops-ON/assets/63795081/9c34dbe5-c7bf-4da2-b4e6-f0e1bcc81d56)
 
